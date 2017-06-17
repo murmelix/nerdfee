@@ -1,0 +1,9 @@
+c:\users\murmelix\documents\Projects\Nerdfee\Nerdfee\bin\Debug\netcoreapp1.1\Nerdfee.deps.json
+c:\users\murmelix\documents\Projects\Nerdfee\Nerdfee\bin\Debug\netcoreapp1.1\Nerdfee.runtimeconfig.json
+c:\users\murmelix\documents\Projects\Nerdfee\Nerdfee\bin\Debug\netcoreapp1.1\Nerdfee.runtimeconfig.dev.json
+c:\users\murmelix\documents\Projects\Nerdfee\Nerdfee\bin\Debug\netcoreapp1.1\Nerdfee.dll
+c:\users\murmelix\documents\Projects\Nerdfee\Nerdfee\bin\Debug\netcoreapp1.1\Nerdfee.pdb
+c:\users\murmelix\documents\Projects\Nerdfee\Nerdfee\obj\Debug\netcoreapp1.1\Nerdfee.csprojResolveAssemblyReference.cache
+c:\users\murmelix\documents\Projects\Nerdfee\Nerdfee\obj\Debug\netcoreapp1.1\Nerdfee.AssemblyInfo.cs
+c:\users\murmelix\documents\Projects\Nerdfee\Nerdfee\obj\Debug\netcoreapp1.1\Nerdfee.dll
+c:\users\murmelix\documents\Projects\Nerdfee\Nerdfee\obj\Debug\netcoreapp1.1\Nerdfee.pdb
