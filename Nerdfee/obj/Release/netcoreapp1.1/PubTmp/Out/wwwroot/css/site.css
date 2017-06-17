@@ -16,7 +16,11 @@ footer {
 }
 
 h2 {
-    color: #eeeeee;
+    color:#444444;
+}
+
+.well .h3{
+    margin:0px;
 }
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
