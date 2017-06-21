@@ -16,12 +16,13 @@ namespace Nerdfee.Controllers
 
         public IActionResult Index()
         {
-            var feed= GetData<FeedResponse>("https://graph.facebook.com/v2.9/nerdfee/feed?from=Nerdfee&access_token={0}&format=json&method=get");
-            foreach(var item in feed.Data)
-            {
-                GetAdditionalData(item);
-            }
-            return View(feed.Data);
+            //var feed= GetData<FeedResponse>("https://graph.facebook.com/v2.9/nerdfee/feed?from=Nerdfee&access_token={0}&format=json&method=get");
+            //foreach(var item in feed.Data)
+            //{
+            //    GetAdditionalData(item);
+            //}
+            //return View(feed.Data);
+            return View(new List<Article>());
         }
 
         private T GetData<T>(string url)
