@@ -7,20 +7,38 @@ using System.Net;
 using Nerdfee.Contracts;
 using Newtonsoft.Json;
 using System.IO;
+using Nerdfee.Data;
 
 namespace Nerdfee.Controllers
 {
     public class ArtikelController : Controller
     {
+        private readonly NerdfeeContext _context;
+
+        public ArtikelController(NerdfeeContext context)
+        {
+            _context = context;
+        }
+
         public IActionResult Index()
         {
-            var r = WebRequest.Create("https://graph.facebook.com/v2.9/nerdfee/feed?from=Nerdfee&access_token=EAACEdEose0cBAAtyxS9yZBaCGDMpBgnYFrae4poevt17Iejpw5HaKWNyTzn9p81XRUg8OkGEwLEOdNNdw5Jb4ImxjtEUts04YUcFXBInPh5ZCEuoZABrAnyzoaNQe7DZCER1vXyJ5rZAG6mIR9Cu75P2mTGIsfx4AwOdf0E4GLBYaEU8efEkWW9MU27ACy8gZD&format=json&method=get");
-            var re = r.GetResponseAsync();
-            re.Wait();
-            var s = re.Result.GetResponseStream();
-            var serializor = JsonSerializer.Create();
-            var feed = serializor.Deserialize<FeedResponse>(new JsonTextReader(new StreamReader(s)));
             return View();
+        }
+
+        public IActionResult Show(Guid id)
+        {
+            var hasImage = _context.ArticleImages.Any(x => x.ArticleId == id);
+            ViewBag.HasImage = hasImage;
+            return View(_context.Articles.First(x => x.Id == id));
+        }
+
+        public FileStreamResult GetPicture(Guid id)
+        {
+            var pic = _context.ArticleImages.FirstOrDefault(x => x.ArticleId == id);
+            if (pic == null)
+                return null;
+            Stream stream = new MemoryStream(pic.Data);
+            return new FileStreamResult(stream, "images/png");
         }
     }
 }
